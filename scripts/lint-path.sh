@@ -1,0 +1,4 @@
+# You can get the right PATH to use here by moving `which cargo` to `cargo_bkup`,
+# and replacing it with a script containing `echo "$PATH" > /tmp/path.txt` to a file,
+
+export PATH="/Users/dmontague/.pyenv/versions/3.7.4/bin:/usr/local/Cellar/pyenv/1.2.15/libexec:/Users/dmontague/.pyenv/shims:/Users/dmontague/.pyenv/bin:/Users/dmontague/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/dmontague/.poetry/bin:/usr/local/opt/fzf/bin"

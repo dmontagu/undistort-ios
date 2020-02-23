@@ -1,0 +1,25 @@
+[package]
+name = "undistort-ios"
+version = "0.1.0"
+authors = ["David Montague <davwmont@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "undistort_ios"
+path = "src/rust/lib.rs"
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+pyo3 = "0.8"
+numpy = "0.7.0"
+ndarray = { version = "0.13.0", features = ["rayon"] }
+
+[features]
+default = ["pyo3/extension-module"]
+unstable = []
+
+[profile.release]
+lto = true
+
+[profile.bench]
+lto = true

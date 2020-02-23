@@ -1,0 +1,95 @@
+[tool.poetry]
+name = "undistort-ios"
+version = "0.1.0"
+description = "Undistort iOS images using various native extensions"
+license = "MIT"
+authors = ["David Montague <davwmont@gmail.com>"]
+readme = "README.md"
+homepage = "https://undistort-ios.davidmontague.xyz"
+repository = "https://github.com/dmontagu/undistort-ios"
+documentation = "https://undistort-ios.davidmontague.xyz"
+keywords = ["distortion", "undistort", "iOS", "CV", "AR"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Utilities"
+]
+build = "build.py"
+include = [
+    "MANIFEST.in",
+    "Cargo.toml",
+    "src/**/*"
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+numpy = "*"
+cython = "*"
+imageio = "*"
+
+[tool.poetry.dev-dependencies]
+setuptools-cpp = "*"
+setuptools-rust = "*"
+
+# Testing
+pytest = "*"
+pytest-cov = "*"
+pytest-asyncio = "*"
+coverage = "*"
+
+matplotlib = "*"
+
+# CI
+codecov = "*"
+
+# Static
+isort = "*"
+autoflake = "*"
+black = { version = "*", allow-prereleases = true }
+flake8 = "*"
+mypy = "*"
+sqlalchemy-stubs = "*"
+
+# Documentation
+mkdocs = "*"
+mkdocs-material = "*"
+markdown-include = "*"
+
+[tool.black]
+line-length = 120
+target_version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+    \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | htmlcov
+    | build
+  )/
+)
+'''
+
+[tool.isort]
+line_length = 120
+known_first_party = ["fastapi-utils", "tests"]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+
+[build-system]
+requires = ["poetry>=0.12", "setuptools", "wheel", "setuptools-rust", "cython", "pybind11", "setuptools-cpp"]
+build-backend = "poetry.masonry.api"
