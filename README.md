@@ -1,5 +1,7 @@
 # Undistort iOS
 
+![Distorted vs. undistorted](https://raw.githubusercontent.com/dmontagu/undistort-ios/master/animation.gif)
+
 Various implementations of image undistortion for images captured with calibration data on an iOS device.  
 
 This package is mostly intended as a comparison of various approaches to writing high-performance
